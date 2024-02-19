@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Container on Radio Checked</title>
+  <style>
+    .container {
+      display: none;
+    }
+    .container.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <label>
+    <input type="radio" name="showContainer" id="radioInput"> Show Container
+  </label>
+  
+  <div id="container" class="container">
+    This is the container to display.
+  </div>
+
+  <script>
+    const radioInput = document.getElementById('radioInput');
+    const container = document.getElementById('container');
+
+    radioInput.addEventListener('change', function() {
+      if (radioInput.checked) {
+        container.classList.add('show');
+      } else {
+        container.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
